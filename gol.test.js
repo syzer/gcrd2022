@@ -31,8 +31,8 @@ test("how many we got", (t) => {
 
 test("two cells die", (t) => {
   t.deepEqual(countAliveCells(twoCells), 2)
-  t.deepEqual(countAliveCells(next(twoCells), 1))
-  t.deepEqual(countAliveCells(next(next(twoCells)), 0))
+  t.deepEqual(countAliveCells(next(twoCells)), 1)
+  t.deepEqual(countAliveCells(next(next(twoCells))), 0)
 })
 
 // test("three neighbours reproduce", (t) => {
