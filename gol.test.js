@@ -1,7 +1,13 @@
 import test from "ava"
-import { empty, next, singleCell, twoCells,
+import {
+  empty,
+  next,
+  singleCell,
+  twoCells,
   // threeCells,
-  countAliveCells } from "./gol.js"
+  // threeDiagonalCells,
+  countAliveCells
+} from "./gol.js"
 
 test("empty world is empty", (t) => {
   t.deepEqual(next(empty), empty)
@@ -16,9 +22,11 @@ test("single cell dies", (t) => {
 
 test("how many we got", (t) => {
   t.deepEqual(countAliveCells(empty, 0))
-  t.deepEqual(countAliveCells(singleCell, 1))
-  t.deepEqual(countAliveCells(next(singleCell), 0))
-  t.deepEqual(countAliveCells(next(empty), 0))
+  t.deepEqual(countAliveCells(singleCell), 1)
+  t.deepEqual(countAliveCells(next(singleCell)), 0)
+  t.deepEqual(countAliveCells(next(empty)), 0)
+  // t.deepEqual(countAliveCells(threeCells), 3)
+  // t.deepEqual(countAliveCells(threeDiagonalCells), 3)
 })
 
 test("two cells die", (t) => {
@@ -29,6 +37,12 @@ test("two cells die", (t) => {
 
 // test("three neighbours reproduce", (t) => {
 //   t.deepEqual(countAliveCells(threeCells, 3))
-//   t.deepEqual(countAliveCells(next(threeCells, 3)))
+//   t.deepEqual(countAliveCells(next(threeCells, 4)))
 // })
-
+//
+// test("three neighbours reproduce", (t) => {
+//   t.deepEqual(countAliveCells(threeDiagonalCells, 3))
+//   t.deepEqual(countAliveCells(next(threeDiagonalCells, 1)))
+//   t.deepEqual(countAliveCells(next(threeDiagonalCells, singleCell))) // :D enjoy
+// })
+//
