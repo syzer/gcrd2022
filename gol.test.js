@@ -1,5 +1,7 @@
 import test from "ava"
-import { empty, next, singleCell, twoCells, countAliveCells } from "./gol.js"
+import { empty, next, singleCell, twoCells,
+  // threeCells,
+  countAliveCells } from "./gol.js"
 
 test("empty world is empty", (t) => {
   t.deepEqual(next(empty), empty)
@@ -20,6 +22,13 @@ test("how many we got", (t) => {
 })
 
 test("two cells die", (t) => {
+  t.deepEqual(countAliveCells(twoCells), 2)
   t.deepEqual(countAliveCells(next(twoCells), 1))
   t.deepEqual(countAliveCells(next(next(twoCells)), 0))
 })
+
+// test("three neighbours reproduce", (t) => {
+//   t.deepEqual(countAliveCells(threeCells, 3))
+//   t.deepEqual(countAliveCells(next(threeCells, 3)))
+// })
+
