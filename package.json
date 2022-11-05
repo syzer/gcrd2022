@@ -4,6 +4,7 @@
   "description": "",
   "main": "gol.js",
   "scripts": {
+    "dev": "ava --watch",
     "test": "ava"
   },
   "author": "",

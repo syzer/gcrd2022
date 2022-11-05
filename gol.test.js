@@ -1,13 +1,12 @@
-import test from 'ava';
-import { empty, next, singleCell } from './gol.js'
+import test from "ava"
+import { empty, next, singleCell } from "./gol.js"
 
-test('empty world is empty', t => {
+test("empty world is empty", (t) => {
   t.deepEqual(next(empty), empty)
   t.deepEqual(next(next(empty)), empty)
   t.deepEqual(next(next(empty)), next(empty))
 })
 
-test('single cell dies', t => {
+test("single cell dies", (t) => {
   t.deepEqual(next(singleCell), empty)
 })
-/* eslint-ignore */
