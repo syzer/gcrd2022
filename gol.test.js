@@ -21,7 +21,7 @@ test("single cell dies", (t) => {
 })
 
 test("how many we got", (t) => {
-  t.deepEqual(countAliveCells(empty, 0))
+  t.deepEqual(countAliveCells(empty), 0)
   t.deepEqual(countAliveCells(singleCell), 1)
   t.deepEqual(countAliveCells(next(singleCell)), 0)
   t.deepEqual(countAliveCells(next(empty)), 0)
