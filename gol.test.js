@@ -1,5 +1,5 @@
 import test from 'ava';
-import { empty, next } from './gol.js'
+import { empty, next, singleCell } from './gol.js'
 
 test('empty world is empty', t => {
   t.deepEqual(next(empty), empty)
