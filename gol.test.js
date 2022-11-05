@@ -9,4 +9,5 @@ test("empty world is empty", (t) => {
 
 test("single cell dies", (t) => {
   t.deepEqual(next(singleCell), empty)
+  t.notDeepEqual(next(empty), singleCell)
 })
